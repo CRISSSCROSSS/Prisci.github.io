@@ -10,11 +10,14 @@
   </video>
   </a-assets>
   
-<a-scene arjs = "debugUIEnabled: false ; patternRatio: 0.75 ; sourceType: webcam ; trackingmethod: best" > 
-    <a-plane position="-0.03944 0.08 0.12782" rotation="-90 0 0" width="4" height="4" material="src:#alpha" scale="6.06 3.66 0.06001" geometry="">
+<a-scene arjs = debugUIEnabled: "false" ; patternRatio: "0.75" ; sourceType: "webcam" ; trackingmethod: "best" > 
+ <a-plane position="0.10056 0.08 0.12782" rotation="-90 0 0" width="4" height="4" material="src:#alpha" scale="2.02 1.42 0.5" geometry="">
+  </a-plane>
 
   </a-plane>
   <a-marker-camera preset= "custom" ; type= "pattern" ; url= "https://cdn.glitch.com/ea665b3b-a182-4955-af13-4f75d559d628%2Fpattern-marcador%20con%20cara%20de%20bb.patt" >
 	</a-scene>
 </body>
 
+<a-plane position="0.10056 0.08 0.12782" rotation="-90 0 0" width="4" height="4" material="src:[object HTMLVideoElement]" scale="2.02 1.42 0.5" geometry="">
+  </a-plane>
