@@ -4,7 +4,7 @@
 <script src="../build/aframe-ar.js"></script>
 <!-- Register an aframe component that allows reacting to marker events -->
 <script>
-	AFRAME.registerComponent('registerevents', {
+	AFRAME.registerComponent('registerevents','emitevents' {
 		init: function () {
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
@@ -30,7 +30,7 @@
         <video 
                id= "alpha" 
                autoplay loop= "true" 
-               src="https://cdn.glitch.com/ea665b3b-a182-4955-af13-4f75d559d628%2Ffamilia%20real%20video%20reducido_2_1.webm">
+               src="https://cdn.glitch.com/ea665b3b-a182-4955-af13-4f75d559d628%2Ffamilia%20real%20video%20reducido.webm">
   </video>
   
     </a-assets>
