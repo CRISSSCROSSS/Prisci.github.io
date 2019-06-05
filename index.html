@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <script src="vendor/aframe/build/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
 <script src="../build/aframe-ar.js"></script>
 <!-- Register an aframe component that allows reacting to marker events -->
 <script>
-	AFRAME.registerComponent("registerevents", {
+	AFRAME.registerComponent('registerevents', {
 		init: function () {
 			var marker = this.el;
-			marker.addEventListener("markerFound', function() {
+			marker.addEventListener('markerFound', function() {
 				var markerId = marker.id;
-				console.log("markerFound', markerId);
+				console.log('markerFound', markerId);
 				// TODO: Add your own code here to react to the marker being found.
 			});
-			marker.addEventListener("markerLost", function() {
+			marker.addEventListener('markerLost', function() {
 				var markerId = marker.id;
-				console.log("markerLost", markerId);
+				console.log('markerLost', markerId);
 				// TODO: Add your own code here to react to the marker being lost.
 			});
 		}
 	});
 </script>
-<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
 <body style= 'margin : 0px; overflow: hidden'>
-  <a-assets>
+  
+<a-assets>
         <video 
-           id="alpha"
+               id= "alpha" 
                autoplay loop= "true" 
                src="https://cdn.glitch.com/62ba5caa-41df-4547-a3e3-f5c9627c4a49%2Fvideo%20a%20convertir.webm">
   </video>
-  </a-assets>
-  <a-scene arjs = "debugUIEnabled: false ; trackingmethod: best; patternRatio: 0.75 ; sourceType: webcam ;" > 
+  <button id="run" title="Com/Ctrl - Shift - 7 to Run" class="button button button-editor-outline button run"><svg class=" icon icon-rerun"><use xlink:href="#rerun"></use></svg><span class="label">Run</span></button>
+<svg class=" icon icon-rerun"><use xlink:href="#rerun"></use></svg>
+<use xlink:href="#rerun"></use>
+<svg id="rerun" viewBox="0 0 100 100" width="100%" height="100%"><path d="M55.702 50.002L77.85 72.324 100 50.002l-9.173-9.249-6.611 6.668C82.878 25.187 64.56 7.5 42.169 7.5 18.916 7.5 0 26.567 0 50.002 0 73.436 18.917 92.5 42.169 92.5h16.218V79.424H42.169c-16.102 0-29.193-13.197-29.193-29.421 0-16.229 13.092-29.426 29.193-29.426 15.08 0 27.37 11.615 28.892 26.41l-6.184-6.233-9.175 9.248z"></path></svg><use xlink:href="#rerun"></use><svg class=" icon icon-rerun"><use xlink:href="#rerun"></use></svg><span class="label">Run</span><button id="run" title="Com/Ctrl - Shift - 7 to Run" class="button button button-editor-outline button run"><svg class=" icon icon-rerun"><use xlink:href="#rerun"></use></svg><span class="label">Run</span></button>
+    </a-assets>
+  
+	<a-scene arjs = "debugUIEnabled: false ; trackingmethod: best; patternRatio: 0.75 ; sourceType: webcam ;" > 
 <a-marker preset="custom" ; type="pattern" url="https://cdn.glitch.com/ea665b3b-a182-4955-af13-4f75d559d628%2Fpattern-marcador%20con%20cara%20de%20bb.patt" ; arjs-anchor="minConfidence:0.333" ; "registerevents"; "emitevents" >
-<a-plane position="0.07056 0.05 0.04782" rotation="-90 0 0" width="4" height="4" material="src:#alpha" scale="6.06 3.66 0.06001" >
+<a-plane position="0.07056 0.05 0.04782" rotation="-90 0 0" width="4" height="4" material="src:#alpha" scale="6.06 3.66 0.06001" geometry="">
   </a-plane>
-  </a-marker>
+  
+
+    </a-marker>
   </a-scene>
 </body>
